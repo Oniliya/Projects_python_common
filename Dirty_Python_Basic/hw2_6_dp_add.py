@@ -4,7 +4,7 @@
 
 
 import string
-PATH='Alice in Wonderland.txt'
+PATH='Data\Alice in Wonderland.txt'
 
 def main():
     alice_dict={}
