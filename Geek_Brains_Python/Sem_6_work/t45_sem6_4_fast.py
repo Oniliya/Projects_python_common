@@ -33,7 +33,7 @@ def main():
     for i in range(number_k):
         sum_i=create_divider_sum(i)
         for j in range(i+1, number_k):
-            if j==sum_i and i==create_divider_sum(j):
+            if  j==sum_i and i==create_divider_sum(j) :
                 print(i,j)
     
                 
