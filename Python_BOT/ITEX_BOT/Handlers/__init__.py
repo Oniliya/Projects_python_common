@@ -3,6 +3,7 @@ from .help import dp
 from .phone import dp
 from .counter import dp
 from .zero_counter import dp
+from .new_user import dp
 # from .name import dp
 
 

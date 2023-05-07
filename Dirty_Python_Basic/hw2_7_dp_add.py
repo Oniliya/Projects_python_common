@@ -26,19 +26,30 @@ def clear_board(my_board: list) -> list:
         new_board.insert(i,[0,0,0,0,0,0,0,0])
     return new_board
 
+import random
+
 def main():
     board=[]
     for i in range(8):
         board.insert(i,[0,0,0,0,0,0,0,0])
     print_board(board)
 
-    for i in range(8):
-        for j in range(8):
-            if board[i][j]!=8 and board[i][j]!=1:
-                put_queen(i,j,board)
+    # for i in range(8):
+    #     for j in range(8):
+    #         if board[i][j]!=8 and board[i][j]!=1:
+    #             put_queen(i,j,board)
     
+    for _ in range(1000):
+        i=random.randint(0,7)
+        j=random.randint(0,7)
+        if board[i][j] != 1 and board[i][j] !=8 :
+            put_queen(i,j, board)
+
     print('------------------------')
     print_board(board)
+
+    # board=clear_board(board)
+    # print_board(board)
 
 
     # put_queen(5-1,5-1,board)

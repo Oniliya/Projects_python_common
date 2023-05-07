@@ -7,7 +7,6 @@ import Variables
 @dp.message_handler(commands=['start'])
 async def start_message(message: Message):
     if Variables.BOT_DICT.get(message.from_user.first_name, None):
-        # Variables.BOT_DICT[message.from_user.first_name] = 0
         count = Variables.BOT_DICT[message.from_user.first_name]
     else:
         count = 0
@@ -26,6 +25,24 @@ async def bye_message(message: Message):
 
     await message.answer(f'И тебе пока, {message.from_user.first_name}',
                          reply_markup=create_kb_counter(Variables.COUNTER, count))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @dp.message_handler(commands=['chamomile'])
