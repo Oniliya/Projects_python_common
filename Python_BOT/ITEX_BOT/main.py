@@ -5,6 +5,14 @@ from Handlers import dp
 
 from Database import create_users_table
 
+from Database import DataBase
+
+db = DataBase()
+db.find_user('users', name='STONE', age=38, city="KRD")
+
+
+
+
 
 async def on_start(_):
     print('Database ....', end='')

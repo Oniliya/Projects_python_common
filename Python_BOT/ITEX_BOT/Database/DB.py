@@ -17,17 +17,21 @@ def create_users_table():
     connection.commit()
 
 
-def new_user(params: tuple[str, int, str, str]):
-    sql = '''INSERT INTO users (name, tg_id, login, password) VALUES (?, ?, ?, ?)'''
-    cursor.execute(sql, params)
-    print('добавлена запить -> ', params)
-    connection.commit()
+# def new_user(params: tuple[str, int, str, str]):
+#     sql = '''INSERT INTO users (name, tg_id, login, password) VALUES (?, ?, ?, ?)'''
+#     cursor.execute(sql, params)
+#     print('добавлена запись -> ', params)
+#     connection.commit()
 
 
 def get_login_password(tg_id: int) -> tuple[str, str]:
     sql = '''SELECT login, password FROM users WHERE tg_id=?'''
     # передавать ТОЛЬКО кортеж (есди один элемент, то (елем,) элемент и запятая!!! в круглых скобках
     # когда что-то получаем из базы данных , то используем .fetch one(точно один)-all(все)-many(например, первые 5)
+
+    # если fetchone то взвращает ОДИН кортеж
     # return cursor.execute(sql, (tg_id,)).fetchone()
-    return cursor.execute(sql, (tg_id,)).fetchone()
+
+    # если fetchall то взвращает СПИСОК кортежей
+    return cursor.execute(sql, (tg_id,)).fetchall()
 
