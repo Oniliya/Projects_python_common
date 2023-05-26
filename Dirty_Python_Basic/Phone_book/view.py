@@ -18,7 +18,7 @@ def show_contact(book: list[dict[str, str]], message: str):
     if book:
         print('\n'+'='*72)
         for i, contact in enumerate(book, 1):
-            print(f'{i:<3} | {contact["name"]:<20} | {contact["phone"]:<20} | {contact["comment"]:<20}')
+             print(f'{i:<3} | {contact["name"]:<20} | {contact["phone"]:<20} | {contact["comment"]:<20}')
         print('='*72,'\n')
     else:
         print(message)
